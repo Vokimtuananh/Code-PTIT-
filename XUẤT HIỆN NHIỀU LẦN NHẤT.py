@@ -1,12 +1,19 @@
 t = int(input())
 for _ in range(t):
-    a = int(input())
-    for _ in range(a):
-        b = int(input()).split()
-        for i in b:
-            if len(i) > len(b):
-                print(len(i))
-            else:
-                print('NO')
-        print()
-    print()
+    n = int(input())
+    m = {}
+    s = 0
+    a = input().split()
+    for i in a:
+        if i in m:
+            m[i] += 1
+        else:
+            m[i] = 1
+    for i in a:
+        if s < m[i]:
+            s = m[i]
+            p = i
+    if s > n / 2:
+        print(p)
+    else:
+        print("NO")
